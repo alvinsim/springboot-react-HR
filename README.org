@@ -1,0 +1,19 @@
+* Tasks
+
+** DONE Configure DataSource. Refer to the 'spring-boot-persistence' GitHub repository.
+** DONE Create entity Java classes.
+** DONE Test creation of schema and data load.
+
+* H2
+
+Access the H2 console via [[http://localhost:8080/h2]] and enter =jdbc:h2:mem:hr= as the "JDBC URL"
+- [[http://localhost:8080/h2/login.jsp?jsessionid=0e18da532b1f586fe6c33c134f88bf2b]]
+
+* References
+
+- [[https://www.baeldung.com/spring-boot-data-sql-and-schema-sql]]
+- [[https://www.baeldung.com/liquibase-refactor-schema-of-java-app]]
+- [[https://docs.liquibase.com/tools-integrations/springboot/using-springboot-with-maven.html]]
+- [[https://docs.liquibase.com/concepts/basic/sql-format.html]]
+- [[https://github.com/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence]]
+- [[https://howtodoinjava.com/spring-boot2/h2-database-example/]]
