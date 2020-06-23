@@ -29,5 +29,5 @@ public class Dependent {
     @JoinColumn(name = "employee_id")
     @ManyToOne
     @NotNull
-    private Employee employeeId;
+    private Employee employee;
 }

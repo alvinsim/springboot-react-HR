@@ -29,7 +29,8 @@ public class Location {
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "country_id")
     @ManyToOne
-    private String countryId;
+    private Country country;
+    @EqualsAndHashCode.Exclude
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "location")
     private List<Department> departments;
 }

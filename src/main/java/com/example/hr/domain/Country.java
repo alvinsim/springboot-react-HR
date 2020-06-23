@@ -14,9 +14,8 @@ import java.util.List;
 @Table(name = "countries")
 public class Country {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    private int id;
+    private String id;
     @Column(name = "country_name", nullable = false)
     @NotNull
     private String countryName;
@@ -24,6 +23,7 @@ public class Country {
     @JoinColumn(name = "region_id")
     @ManyToOne
     private Region region;
-    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "country", fetch = FetchType.LAZY)
     private List<Location> locations;
 }

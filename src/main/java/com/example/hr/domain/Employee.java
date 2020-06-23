@@ -42,16 +42,18 @@ public class Employee {
     private double salary;
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "manager_id")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @NotNull
-    private Employee managerId;
+    private Employee manager;
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "department_id")
-    @ManyToOne(cascade = CascadeType.REFRESH)
+    @ManyToOne
     @NotNull
     private Department department;
-    @OneToMany(mappedBy = "dependent", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Dependent> dependents;
-    @OneToMany(mappedBy = "managerId")
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "manager")
     private List<Employee> employees;
 }

@@ -25,6 +25,7 @@ public class Department {
     @NotNull
     @ManyToOne
     private Location location;
-    @OneToMany(mappedBy = "employee")
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
     private List<Employee> employees;
 }

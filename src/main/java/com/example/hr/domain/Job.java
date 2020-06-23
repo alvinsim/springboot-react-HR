@@ -1,10 +1,7 @@
 package com.example.hr.domain;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -29,6 +26,7 @@ public class Job {
     @Column(name = "max_salary", nullable = false)
     @NotNull
     private double maxSalary;
+    @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "job", fetch = FetchType.LAZY)
     private List<Employee> employees;
 }

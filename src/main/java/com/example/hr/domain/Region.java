@@ -1,10 +1,7 @@
 package com.example.hr.domain;
 
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,6 +20,7 @@ public class Region {
     @Column(name = "region_name", nullable = false)
     @NotNull
     private String regionName;
+    @EqualsAndHashCode.Exclude
     @OneToMany(mappedBy = "region", fetch = FetchType.LAZY)
     private List<Country> countries;
 }
