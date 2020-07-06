@@ -1,11 +1,13 @@
 package com.example.hr.domain;
 
-import com.sun.istack.NotNull;
+import com.example.hr.serializer.CustomJsonDateDeserializer;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @Builder
@@ -15,7 +17,7 @@ import java.util.List;
 @Table(name = "employees")
 public class Employee {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
     @Column(name = "first_name", nullable = false)
@@ -27,11 +29,11 @@ public class Employee {
     @Column(nullable = false)
     @NotNull
     private String email;
+    @Column(name = "hire_date", nullable = false)
+    @JsonDeserialize(using = CustomJsonDateDeserializer.class)
+    private LocalDate hireDate;
     @Column(name = "phone_number")
     private String phoneNumber;
-    @Column(name = "hire_date", nullable = false)
-    @NotNull
-    private Date hireDate;
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "job_id")
     @ManyToOne
@@ -43,17 +45,10 @@ public class Employee {
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "manager_id")
     @ManyToOne
-    @NotNull
     private Employee manager;
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "department_id")
     @ManyToOne
     @NotNull
     private Department department;
-    @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Dependent> dependents;
-    @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "manager")
-    private List<Employee> employees;
 }

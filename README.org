@@ -1,13 +1,31 @@
-* Tasks
+* Tasks [94%]
 
 ** DONE Configure DataSource. Refer to the 'spring-boot-persistence' GitHub repository.
 ** DONE Create entity Java classes.
 ** DONE Test creation of schema and data load.
+** DONE GET API for jobs to retrieve all records.
+** DONE Repository for Jobs including test.
+** DONE Jobs Service and test.
+** DONE Jobs API and test.
+** DONE GET API for jobs to retrieve by id.
+** DONE GET API for employees to retrieve all records
+** DONE GET API for employees to retrieve by id.
+** DONE Write test for employees API -- [[https://www.baeldung.com/restclienttest-in-spring-boot]].
+** DONE Controller on error to return response in JSON.
+** CANCEL In =RestExceptionHandler= encapsulate =ApiSubError= into =ApiResponse=.
+** DONE POST API for employees to add a new record
+** DONE DELETE API for employees to delete a record
+** DONE PUT API for employees to update a record
+** TODO React front-end
 
 * H2
 
 Access the H2 console via [[http://localhost:8080/h2]] and enter =jdbc:h2:mem:hr= as the "JDBC URL"
-- [[http://localhost:8080/h2/login.jsp?jsessionid=0e18da532b1f586fe6c33c134f88bf2b]]
+- [[http://localhost:8080/h2]]
+
+* JSON API
+
+- [[https://github.com/omniti-labs/jsend]]
 
 * References
 
@@ -17,3 +35,8 @@ Access the H2 console via [[http://localhost:8080/h2]] and enter =jdbc:h2:mem:hr
 - [[https://docs.liquibase.com/concepts/basic/sql-format.html]]
 - [[https://github.com/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence]]
 - [[https://howtodoinjava.com/spring-boot2/h2-database-example/]]
+- [[https://dzone.com/articles/how-to-create-rest-api-with-spring-boot]]
+- [[https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods]]
+- [[https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/]]
+- [[https://github.com/brunocleite/spring-boot-exception-handling]]
+- [[https://www.toptal.com/java/spring-boot-rest-api-error-handling]]

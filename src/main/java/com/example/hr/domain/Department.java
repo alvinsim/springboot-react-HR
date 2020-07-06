@@ -1,10 +1,9 @@
 package com.example.hr.domain;
 
-import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @Builder
@@ -14,7 +13,7 @@ import java.util.List;
 @Table(name = "departments")
 public class Department {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
     @Column(name = "department_name", nullable = false)
@@ -25,7 +24,4 @@ public class Department {
     @NotNull
     @ManyToOne
     private Location location;
-    @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
-    private List<Employee> employees;
 }

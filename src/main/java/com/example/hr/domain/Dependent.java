@@ -1,9 +1,9 @@
 package com.example.hr.domain;
 
-import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @Builder
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Table(name = "dependents")
 public class Dependent {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
     @Column(name = "first_name", nullable = false)

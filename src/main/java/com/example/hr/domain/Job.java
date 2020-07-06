@@ -1,10 +1,13 @@
 package com.example.hr.domain;
 
-import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @Builder
@@ -14,7 +17,7 @@ import java.util.List;
 @Table(name = "jobs")
 public class Job {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
     @Column(name = "job_title", nullable = false)
@@ -22,11 +25,10 @@ public class Job {
     private String jobTitle;
     @Column(name = "min_salary", nullable = false)
     @NotNull
+    @Min(value = 1)
     private double minSalary;
     @Column(name = "max_salary", nullable = false)
     @NotNull
+    @Min(value = 1)
     private double maxSalary;
-    @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "job", fetch = FetchType.LAZY)
-    private List<Employee> employees;
 }

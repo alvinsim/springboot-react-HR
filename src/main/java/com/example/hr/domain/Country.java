@@ -1,10 +1,9 @@
 package com.example.hr.domain;
 
-import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @Builder
@@ -14,8 +13,11 @@ import java.util.List;
 @Table(name = "countries")
 public class Country {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private String id;
+    private int id;
+    @Column(name = "country_code", nullable = false)
+    private String countryCode;
     @Column(name = "country_name", nullable = false)
     @NotNull
     private String countryName;
@@ -23,7 +25,4 @@ public class Country {
     @JoinColumn(name = "region_id")
     @ManyToOne
     private Region region;
-    @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "country", fetch = FetchType.LAZY)
-    private List<Location> locations;
 }

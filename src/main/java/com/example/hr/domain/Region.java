@@ -1,10 +1,12 @@
 package com.example.hr.domain;
 
-import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @Builder
@@ -14,13 +16,10 @@ import java.util.List;
 @Table(name = "regions")
 public class Region {
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
     @Column(name = "region_name", nullable = false)
     @NotNull
     private String regionName;
-    @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "region", fetch = FetchType.LAZY)
-    private List<Country> countries;
 }

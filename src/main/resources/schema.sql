@@ -17,7 +17,8 @@ CREATE TABLE regions (
 DROP TABLE IF EXISTS countries;
 
 CREATE TABLE countries (
-	id            VARCHAR(2) NOT NULL,
+	id            INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	country_code  VARCHAR(2) NOT NULL,
 	country_name  VARCHAR(25) NOT NULL,
 	region_id     INT NOT NULL,
 	PRIMARY KEY (id ASC),
@@ -32,7 +33,7 @@ CREATE TABLE locations (
 	postal_code	    VARCHAR(7),
 	city	        VARCHAR(50) NOT NULL,
 	state_province	VARCHAR(25),
-	country_id	    VARCHAR(2) NOT NULL,
+	country_id	    INT NOT NULL,
 	FOREIGN KEY (country_id) REFERENCES countries (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
