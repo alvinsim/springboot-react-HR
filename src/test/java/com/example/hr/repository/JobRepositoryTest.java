@@ -36,7 +36,7 @@ public class JobRepositoryTest {
 
     @Test
     public void testFindByIdShouldReturnJob() {
-        assertEquals(repository.findById(job.getId()).get(), job);
+        assertEquals(job, repository.findById(job.getId()).get());
     }
 
     @Test
@@ -50,7 +50,7 @@ public class JobRepositoryTest {
         anotherJob = repository.save(anotherJob);
 
         assertNotNull(anotherJob);
-        assertEquals(repository.findById(anotherJob.getId()).get(), anotherJob);
+        assertEquals(anotherJob, repository.findById(anotherJob.getId()).get());
     }
 
     @Test

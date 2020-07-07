@@ -53,7 +53,7 @@ public class DepartmentRepositoryTest {
 
     @Test
     public void testFindByIdShouldReturnDepartment() {
-        assertEquals(repository.findById(department.getId()).get(), department);
+        assertEquals(department, repository.findById(department.getId()).get());
     }
 
     @Test
@@ -67,7 +67,7 @@ public class DepartmentRepositoryTest {
         anotherDepartment = repository.save(anotherDepartment);
 
         assertNotNull(anotherDepartment);
-        assertEquals(repository.findById(anotherDepartment.getId()).get(), anotherDepartment);
+        assertEquals(anotherDepartment, repository.findById(anotherDepartment.getId()).get());
     }
 
     @Test

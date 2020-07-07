@@ -28,6 +28,16 @@ public class JobService {
         return repository.save(job);
     }
 
+    public Job updateJob(Job job) {
+        return repository.findById(job.getId())
+                .map(j -> {
+                    j.setJobTitle(job.getJobTitle());
+                    j.setMaxSalary(job.getMaxSalary());
+                    j.setMinSalary(job.getMinSalary());
+                    return repository.save(j);
+                }).orElseThrow(() -> new EntityNotFoundException(Job.class, "id", String.valueOf(job.getId())));
+    }
+
     public void deleteJobById(int id) {
         Job job = getJobById(id);
         repository.deleteById(job.getId());

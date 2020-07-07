@@ -36,7 +36,7 @@ public class RegionRepositoryTest {
 
     @Test
     public void testFindByIdShouldReturnRegion() {
-        assertEquals(repository.findById(region.getId()).get(), region);
+        assertEquals(region, repository.findById(region.getId()).get());
     }
 
     @Test
@@ -50,7 +50,7 @@ public class RegionRepositoryTest {
         anotherRegion = repository.save(anotherRegion);
 
         assertNotNull(anotherRegion);
-        assertEquals(repository.findById(anotherRegion.getId()).get(), anotherRegion);
+        assertEquals(anotherRegion, repository.findById(anotherRegion.getId()).get());
     }
 
     @Test

@@ -17,6 +17,7 @@
 ** DONE DELETE API for employees to delete a record
 ** DONE PUT API for employees to update a record
 ** TODO React front-end
+** TODO Implement Swagger -- https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
 
 * H2
 

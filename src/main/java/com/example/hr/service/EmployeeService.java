@@ -28,6 +28,22 @@ public class EmployeeService {
         return repository.save(employee);
     }
 
+    public Employee updateEmployee(Employee employee) {
+        return repository.findById(employee.getId())
+                .map(emp -> {
+                    emp.setFirstName(employee.getFirstName());
+                    emp.setLastName(employee.getLastName());
+                    emp.setEmail(employee.getEmail());
+                    emp.setDepartment(employee.getDepartment());
+                    emp.setHireDate(employee.getHireDate());
+                    emp.setJob(employee.getJob());
+                    emp.setManager(employee.getManager());
+                    emp.setPhoneNumber(employee.getPhoneNumber());
+                    emp.setSalary(employee.getSalary());
+                    return repository.save(emp);
+                }).orElseThrow(() -> new EntityNotFoundException(Employee.class, "id", String.valueOf(employee.getId())));
+    }
+
     public void deleteEmployeeById(int id) {
         Employee employee = getEmployeeById(id);
         repository.deleteById(employee.getId());

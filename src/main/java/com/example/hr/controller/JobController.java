@@ -46,7 +46,7 @@ public class JobController extends AbstractController {
 
     @PutMapping("/jobs")
     public ResponseEntity<ApiResponse> updateJob(@Valid @RequestBody Job job) {
-        Job updatedJob = service.saveJob(job);
+        Job updatedJob = service.updateJob(job);
         ApiResponse apiResponse = ApiResponse.builder().status(RESPONSE_STATUS_SUCCESS).data(updatedJob).build();
         return new ResponseEntity<>(apiResponse, OK);
     }

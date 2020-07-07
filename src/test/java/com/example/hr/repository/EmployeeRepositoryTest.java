@@ -10,7 +10,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -66,7 +65,7 @@ public class EmployeeRepositoryTest {
 
     @Test
     public void testFindByIdShouldReturnEmployee() {
-        assertEquals(employeeRepository.findById(employee.getId()).get(), employee);
+        assertEquals(employee, employeeRepository.findById(employee.getId()).get());
     }
 
     @Test
@@ -88,7 +87,7 @@ public class EmployeeRepositoryTest {
         anotherEmployee = employeeRepository.save(anotherEmployee);
 
         assertNotNull(anotherEmployee);
-        assertEquals(employeeRepository.findById(anotherEmployee.getId()).get(), anotherEmployee);
+        assertEquals(anotherEmployee, employeeRepository.findById(anotherEmployee.getId()).get());
     }
 
     @Test

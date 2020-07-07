@@ -40,7 +40,7 @@ public class CountryRepositoryTest {
 
     @Test
     public void testFindByIdShouldReturnCountry() {
-        assertEquals(repository.findById(country.getId()).get(), country);
+        assertEquals(country, repository.findById(country.getId()).get());
     }
 
     @Test
@@ -53,7 +53,7 @@ public class CountryRepositoryTest {
         Country anotherCountry = Country.builder().countryCode("BB").countryName("Another Country").region(region).build();
         anotherCountry = entityManager.persist(anotherCountry);
 
-        assertEquals(repository.findById(anotherCountry.getId()).get(), anotherCountry);
+        assertEquals(anotherCountry, repository.findById(anotherCountry.getId()).get());
     }
 
     @Test

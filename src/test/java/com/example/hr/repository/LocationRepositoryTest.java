@@ -50,7 +50,7 @@ public class LocationRepositoryTest {
 
     @Test
     public void testFindByIdShouldReturnLocation() {
-        assertEquals(repository.findById(location.getId()).get(), location);
+        assertEquals(location, repository.findById(location.getId()).get());
     }
 
     @Test
@@ -71,7 +71,7 @@ public class LocationRepositoryTest {
         anotherLocation = repository.save(anotherLocation);
 
         assertNotNull(anotherLocation);
-        assertEquals(repository.findById(anotherLocation.getId()).get(), anotherLocation);
+        assertEquals(anotherLocation, repository.findById(anotherLocation.getId()).get());
     }
 
     @Test
