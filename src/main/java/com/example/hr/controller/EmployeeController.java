@@ -24,7 +24,7 @@ public class EmployeeController extends AbstractController {
     private EmployeeService service;
 
     @GetMapping("/employees")
-    public ResponseEntity<ApiResponse> getAlLEmployees() throws EntityNotFoundException {
+    public ResponseEntity<ApiResponse> getAllEmployees() throws EntityNotFoundException {
         Iterable<Employee> employees = service.getAllEmployees();
         ApiResponse apiResponse = ApiResponse
                 .builder()

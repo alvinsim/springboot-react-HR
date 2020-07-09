@@ -1,4 +1,4 @@
-* Tasks [94%]
+* Tasks [90%]
 
 ** DONE Configure DataSource. Refer to the 'spring-boot-persistence' GitHub repository.
 ** DONE Create entity Java classes.
@@ -16,8 +16,10 @@
 ** DONE POST API for employees to add a new record
 ** DONE DELETE API for employees to delete a record
 ** DONE PUT API for employees to update a record
-** TODO React front-end
-** TODO Implement Swagger -- https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+** CANCEL React front-end
+** DOING Set date in POST request
+** TODO Document application in =README.org=
+** DONE Implement Swagger -- https://www.dariawan.com/tutorials/spring/documenting-spring-boot-rest-api-springdoc-openapi-3/
 
 * H2
 
@@ -27,6 +29,12 @@ Access the H2 console via [[http://localhost:8080/h2]] and enter =jdbc:h2:mem:hr
 * JSON API
 
 - [[https://github.com/omniti-labs/jsend]]
+
+* Swagger URL
+
+- [[http://localhost:8080/v2/api-docs]]
+- [[http://localhost:8080/swagger-ui/index.html]]
+- [[https://www.dariawan.com/tutorials/spring/documenting-spring-boot-rest-api-springdoc-openapi-3/]]
 
 * References
 
