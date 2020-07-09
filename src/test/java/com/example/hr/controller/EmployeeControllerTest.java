@@ -129,7 +129,7 @@ public class EmployeeControllerTest {
         when(service.getEmployeeById(maria.getId())).thenReturn(maria);
 
         mvc.perform(
-                get("/api/employees/{id}", maria.getId())
+                get("/api/employee/{id}", maria.getId())
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
@@ -147,7 +147,7 @@ public class EmployeeControllerTest {
                 .thenThrow(new EntityNotFoundException(Employee.class, "id", String.valueOf(employeeId)));
 
         mvc.perform(
-                get("/api/employees/{id}", employeeId)
+                get("/api/employee/{id}", employeeId)
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
@@ -178,7 +178,7 @@ public class EmployeeControllerTest {
         ObjectMapper objectMapper = new ObjectMapper();
 
         mvc.perform(
-                post("/api/employees")
+                post("/api/employee")
                         .content(objectMapper.writeValueAsBytes(jane))
                         .characterEncoding("UTF-8")
                         .accept(APPLICATION_JSON)
@@ -197,7 +197,7 @@ public class EmployeeControllerTest {
         doNothing().when(service).deleteEmployeeById(maria.getId());
 
         mvc.perform(
-                delete("/api/employees/{id}", maria.getId())
+                delete("/api/employee/{id}", maria.getId())
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
@@ -212,7 +212,7 @@ public class EmployeeControllerTest {
                 .when(service).deleteEmployeeById(employeeId);
 
         mvc.perform(
-                delete("/api/employees/{id}", employeeId)
+                delete("/api/employee/{id}", employeeId)
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
