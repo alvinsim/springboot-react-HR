@@ -1,4 +1,4 @@
-package com.example.hr;
+package com.example.hr.configuration;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

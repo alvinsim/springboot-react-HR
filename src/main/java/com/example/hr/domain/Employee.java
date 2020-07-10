@@ -3,6 +3,9 @@ package com.example.hr.domain;
 import com.example.hr.serializer.CustomJsonDateDeserializer;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import lombok.*;
 
 import javax.persistence.*;
@@ -30,7 +33,9 @@ public class Employee {
     @NotNull
     private String email;
     @Column(name = "hire_date", nullable = false)
-    @JsonDeserialize(using = CustomJsonDateDeserializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate hireDate;
     @Column(name = "phone_number")
     private String phoneNumber;

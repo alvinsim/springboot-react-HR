@@ -17,7 +17,7 @@
 ** DONE DELETE API for employees to delete a record
 ** DONE PUT API for employees to update a record
 ** CANCEL React front-end
-** DOING Set date in POST request
+** DOING Set date in POST request -- https://www.baeldung.com/spring-date-parameters
 ** TODO Document application in =README.org=
 ** DONE Implement Swagger -- https://www.dariawan.com/tutorials/spring/documenting-spring-boot-rest-api-springdoc-openapi-3/
 
@@ -49,3 +49,4 @@ Access the H2 console via [[http://localhost:8080/h2]] and enter =jdbc:h2:mem:hr
 - [[https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/]]
 - [[https://github.com/brunocleite/spring-boot-exception-handling]]
 - [[https://www.toptal.com/java/spring-boot-rest-api-error-handling]]
+- [[https://www.baeldung.com/jackson-serialize-dates]]

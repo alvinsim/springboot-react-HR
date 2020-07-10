@@ -73,7 +73,7 @@ public class JobControllerTest {
         when(service.getJobById(dba.getId())).thenReturn(dba);
 
         mvc.perform(
-                get("/api/job/{id}", dba.getId())
+                get("/api/jobs/{id}", dba.getId())
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
@@ -90,7 +90,7 @@ public class JobControllerTest {
         when(service.getJobById(jobId)).thenThrow(new EntityNotFoundException(Job.class, "id", String.valueOf(jobId)));
 
         mvc.perform(
-                get("/api/job/{id}", jobId)
+                get("/api/jobs/{id}", jobId)
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
@@ -109,7 +109,7 @@ public class JobControllerTest {
         ObjectMapper objectMapper = new ObjectMapper();
 
         mvc.perform(
-                post("/api/job/")
+                post("/api/jobs/")
                         .content(objectMapper.writeValueAsBytes(officeManager))
                         .characterEncoding("UTF-8")
                         .accept(APPLICATION_JSON)
@@ -129,7 +129,7 @@ public class JobControllerTest {
         doNothing().when(service).deleteJobById(secretary.getId());
 
         mvc.perform(
-                delete("/api/job/{id}", secretary.getId())
+                delete("/api/jobs/{id}", secretary.getId())
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
@@ -144,7 +144,7 @@ public class JobControllerTest {
                 .when(service).deleteJobById(jobId);
 
         mvc.perform(
-                delete("/api/job/{id}", jobId)
+                delete("/api/jobs/{id}", jobId)
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )

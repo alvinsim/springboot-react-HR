@@ -67,7 +67,7 @@ public class EmployeeControllerTest {
                 .lastName("Long")
                 .email("john.l@example.org")
                 .phoneNumber("0234567891")
-//                .hireDate(LocalDate.now())
+                .hireDate(LocalDate.parse("2020-06-10"))
                 .salary(6000.00)
                 .job(manager)
                 .manager(null)
@@ -129,7 +129,7 @@ public class EmployeeControllerTest {
         when(service.getEmployeeById(maria.getId())).thenReturn(maria);
 
         mvc.perform(
-                get("/api/employee/{id}", maria.getId())
+                get("/api/employees/{id}", maria.getId())
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
@@ -147,7 +147,7 @@ public class EmployeeControllerTest {
                 .thenThrow(new EntityNotFoundException(Employee.class, "id", String.valueOf(employeeId)));
 
         mvc.perform(
-                get("/api/employee/{id}", employeeId)
+                get("/api/employees/{id}", employeeId)
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
@@ -169,7 +169,7 @@ public class EmployeeControllerTest {
                 .email("jane.l@example.org")
                 .phoneNumber("0456789123")
                 .salary(4500.00)
-//                .hireDate(LocalDate.parse("2020-07-06"))
+                .hireDate(LocalDate.parse("2020-07-06"))
                 .job(tester)
                 .manager(john)
                 .department(department)
@@ -178,7 +178,7 @@ public class EmployeeControllerTest {
         ObjectMapper objectMapper = new ObjectMapper();
 
         mvc.perform(
-                post("/api/employee")
+                post("/api/employees")
                         .content(objectMapper.writeValueAsBytes(jane))
                         .characterEncoding("UTF-8")
                         .accept(APPLICATION_JSON)
@@ -197,7 +197,7 @@ public class EmployeeControllerTest {
         doNothing().when(service).deleteEmployeeById(maria.getId());
 
         mvc.perform(
-                delete("/api/employee/{id}", maria.getId())
+                delete("/api/employees/{id}", maria.getId())
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
@@ -212,14 +212,14 @@ public class EmployeeControllerTest {
                 .when(service).deleteEmployeeById(employeeId);
 
         mvc.perform(
-                delete("/api/employee/{id}", employeeId)
+                delete("/api/employees/{id}", employeeId)
                         .accept(APPLICATION_JSON)
                         .contentType(APPLICATION_JSON)
         )
                 .andDo(print())
-        .andExpect(status().isNotFound())
-        .andExpect(jsonPath("$.status").value("error"))
-        .andExpect(jsonPath("$.message")
-                .value(String.format("Employee was not found for parameters {id=%d}", employeeId)));
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.status").value("error"))
+                .andExpect(jsonPath("$.message")
+                        .value(String.format("Employee was not found for parameters {id=%d}", employeeId)));
     }
 }
