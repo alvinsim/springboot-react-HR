@@ -15,7 +15,7 @@
 	<description>A sample HR application built using Spring Boot and React </description>
 
 	<properties>
-		<guava.version>20.0</guava.version>
+		<guava.version>24.1.1-jre</guava.version>
 		<h2.version>1.4.200</h2.version>
 		<java.version>11</java.version>
 		<java-ee.api.version>8.0.1</java-ee.api.version>
