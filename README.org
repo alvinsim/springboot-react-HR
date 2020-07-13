@@ -1,0 +1,66 @@
+#+TITLE: Springboot-React-HR Sample Application
+#+STARTUP: showall
+#+OPTIONS: toc:nil
+
+* Introduction
+
+This project is a HR (/Java RESTful Web Service/) application written using [[https://spring.io/projects/spring-boot][Spring Boot]] (/version 2.3.0.RELEASE/).
+
+* Start-up the Application
+
+** Pre-requisite
+
+ To run this application, the below requirements need to be installed.
+ - Java JDK (/version 11/)
+ - Maven (/version 3.6.3/)
+
+ As this project uses [[https://projectlombok.org/][Lombok]] in the entity models, it may be useful to install its IDE or text editor plugin/extension. You can refer to the Lombok website for details on how to do so.
+
+** Starting it up
+
+As this project uses Maven, you can use the command ~mvnw spring-boot:run~ to start it up.
+
+Once the application is up, you can start to access the database and also access the API documentation via Swagger, which will be discussed below.
+
+* Database
+
+In this application, it uses a H2 embedded database and I have chosen to use [[https://www.sqltutorial.org/sql-sample-database/][this sample HR Database]]. The DDL script can be found in =src/main/resources/schema.sql=, whilst the =data.sql= in the same directory is used to pre-populate the data when the application boots up.
+
+After the application starts up, the H2 console can be accessed via the [[http://localhost:8080/h2]] URL and connect using the details as per the screen capture.
+
+#+CAPTION: H2 console login
+#+NAME: fig-2.0
+[[file:h2-console.png]]
+
+#+CAPTION: HR database diagram
+#+NAME: fig-2.1
+Refer below for the database diagram.
+
+[[file:db-diagram.png]]
+
+* API
+
+When the application is up, you can view a list of API calls via Swagger at [[http://localhost:8080/swagger-ui.html]].
+
+These APIs return a JSON response in the [[https://github.com/omniti-labs/jsend][JSend]] format. In the response, there are three keys:
+- status :: =success=, =fail= or =error.=
+
+- data :: The data returned in the response or =NULL= if there is no data.
+
+- message :: Error message when processing the request or the request has invalid data.
+
+
+* References
+
+Below are the articles that I referred to when building this application from scratch.
+
+- [[https://www.baeldung.com/spring-boot-data-sql-and-schema-sql]]
+- [[https://github.com/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence]]
+- [[https://howtodoinjava.com/spring-boot2/h2-database-example/]]
+- [[https://dzone.com/articles/how-to-create-rest-api-with-spring-boot]]
+- [[https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods]]
+- [[https://www.callicoder.com/hibernate-spring-boot-jpa-one-to-many-mapping-example/]]
+- [[https://github.com/brunocleite/spring-boot-exception-handling]]
+- [[https://www.toptal.com/java/spring-boot-rest-api-error-handling]]
+- [[https://www.baeldung.com/jackson-serialize-dates]]
+- [[https://www.dariawan.com/tutorials/spring/documenting-spring-boot-rest-api-springdoc-openapi-3/]]
