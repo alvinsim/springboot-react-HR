@@ -1,0 +1,12 @@
+{
+		"compilerOptions": {
+				"baseUrl": "./src",
+				"jsx": "react",
+				"paths": {
+						"~/*": ["./*"]
+				},
+				"strict": true,
+				"typeRoots": ["node_modules/@types"]
+		},
+		"include": ["src/**/*"]
+}

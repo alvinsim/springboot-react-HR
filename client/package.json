@@ -1,0 +1,29 @@
+{
+		"name": "client",
+		"version": "0.1.0",
+		"main": "index.js",
+		"license": "UNLICENSED",
+		"scripts": {
+				"build": "$(npm bin)/parcel build ./src/index.html",
+				"lint": "$(npm bin)/eslint ./src",
+				"start": "parcel ./src/index.html"
+		},
+		"pre-commit": [
+				"lint"
+		],
+		"dependencies": {
+				"react": "^16.13.1",
+				"react-dom": "^16.13.1"
+		},
+		"devDependencies": {
+				"@types/parcel-env": "^0.0.0",
+				"@types/react": "^16.9.43",
+				"@types/react-dom": "^16.9.8",
+				"@typescript-eslint/eslint-plugin": "^3.6.1",
+				"@typescript-eslint/parser": "^3.6.1",
+				"eslint": "^7.4.0",
+				"parcel-bundler": "^1.12.4",
+				"tsc": "^1.20150623.0",
+				"typescript": "^3.9.6"
+		}
+}

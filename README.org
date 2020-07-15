@@ -2,6 +2,11 @@
 #+STARTUP: showall
 #+OPTIONS: toc:nil
 
+* Tasks [0%]
+
+** TODO Setup TypeScript -- [[https://parceljs.org/typeScript.html]]
+** TODO Setup tslint.json
+
 * Introduction
 
 This project is a HR (/Java RESTful Web Service/) application written using [[https://spring.io/projects/spring-boot][Spring Boot]] (/version 2.3.0.RELEASE/).
@@ -49,6 +54,9 @@ These APIs return a JSON response in the [[https://github.com/omniti-labs/jsend]
 
 - message :: Error message when processing the request or the request has invalid data.
 
+* React Front-end client
+
+- [[http://localhost:1234]]
 
 * References
 
@@ -64,3 +72,4 @@ Below are the articles that I referred to when building this application from sc
 - [[https://www.toptal.com/java/spring-boot-rest-api-error-handling]]
 - [[https://www.baeldung.com/jackson-serialize-dates]]
 - [[https://www.dariawan.com/tutorials/spring/documenting-spring-boot-rest-api-springdoc-openapi-3/]]
+- [[https://parceljs.org/]]

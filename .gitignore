@@ -32,3 +32,8 @@ build/
 
 ### Emacs ###
 **/.backup
+
+### React ###
+client/node_modules
+client/**/.cache
+client/**/dist
