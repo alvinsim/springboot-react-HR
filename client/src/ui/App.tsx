@@ -1,12 +1,30 @@
+import { Layout, Menu } from 'antd';
 import * as React from 'react';
+import '~/styles/App.less';
 
 export class App extends React.Component {
   public render() {
+
+    const { Header, Content, Footer } = Layout;
+
     return (
-      <div>
-        <title>Spring React HR</title>
-        <h1>Spring React HR</h1>
-      </div>
+      <Layout>
+        <Header>
+          <div className="logo">
+            <span><a href="/">HR</a></span>
+          </div>
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+            <Menu.Item key="1">Jobs</Menu.Item>
+            <Menu.Item key="2">Employees</Menu.Item>
+          </Menu>
+        </Header>
+        <Content className="site-layout">
+          Hello, World!
+        </Content>
+        <Footer>
+          SpringBoot React HR Sample Application | Created by Alvin Sim
+				</Footer>
+      </Layout>
     );
   }
 }
