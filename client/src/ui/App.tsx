@@ -9,7 +9,7 @@ export class App extends React.Component {
 
     return (
       <Layout>
-        <Header>
+        <Header className="site-header">
           <div className="logo">
             <span><a href="/">HR</a></span>
           </div>
@@ -18,10 +18,10 @@ export class App extends React.Component {
             <Menu.Item key="2">Employees</Menu.Item>
           </Menu>
         </Header>
-        <Content className="site-layout">
+        <Content className="site-content">
           Hello, World!
         </Content>
-        <Footer>
+        <Footer className="site-footer">
           SpringBoot React HR Sample Application | Created by Alvin Sim
 				</Footer>
       </Layout>
