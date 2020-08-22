@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-const Employees = () => <div>Hello, Employees!</div>;
+const Employees: React.FunctionComponent = () => <div>Hello, Employees!</div>;
 
 export default Employees;

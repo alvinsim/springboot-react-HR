@@ -1,21 +1,15 @@
 import { BASE_URL } from '~/common/baseServices';
+import { Message } from '~/common/types';
 
-export async function fetchAllJobs() {
-		const getUrl: string = 'jobs/';
-		const apiUrl: string = `${BASE_URL}${getUrl}`;
+export async function fetchJobs(): Promise<Message> {
+    const getUrl = 'jobs/';
+    const apiUrl = `${BASE_URL}${getUrl}`;
 
-		try {
-				const response: any = await fetch(apiUrl, { method: 'GET' });
-				let data;
-
-				if (response.ok) {
-						data = await response.json();
-				}
-
-				return data;
-		} catch (e) {
-				return {
-						error: e
-				};
-		}
+    return fetch(apiUrl, { method: 'GET' })
+        .then(res => res.json())
+        .catch(err => ({
+            data: {},
+            message: err,
+            status: 'error'
+        }));
 }

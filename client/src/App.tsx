@@ -1,8 +1,9 @@
 import { SolutionOutlined, TeamOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
+import * as React from 'react';
+import { Provider } from 'react-redux';
 import Employees from '~/employees';
 import Jobs from '~/jobs';
-import * as React from 'react';
 import '~/common/App.less';
 
 interface Props {
@@ -30,7 +31,7 @@ export class App extends React.Component<Props, State> {
     selectedMenuItem: 'jobs'
   };
 
-  public render() {
+  public render(): JSX.Element {
     const { Header, Content, Footer } = Layout;
     const { current } = this.state;
 

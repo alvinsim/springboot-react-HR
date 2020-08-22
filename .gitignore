@@ -37,3 +37,4 @@ build/
 client/node_modules
 client/**/.cache
 client/**/dist
+client/yarn-error.log
