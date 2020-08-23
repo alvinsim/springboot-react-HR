@@ -1,8 +1,8 @@
-import { call } from 'redux-saga/effects';
+import { call, take } from 'redux-saga/effects';
 import { expectSaga } from 'redux-saga-test-plan';
-import { fetchedJobs } from '~/jobs/actions';
+import { fetchedJobs, GET_JOBS } from '~/jobs/actions';
 import { fetchJobs } from '~/jobs/services';
-import { getJobsHandler } from '~/sagas';
+import { getJobsHandler, main } from '~/sagas';
 
 it('getJobHandler', () => {
     const payload = {
@@ -19,7 +19,8 @@ it('getJobHandler', () => {
         status: 'success'
     };
 
-    return expectSaga(getJobsHandler)
+    return expectSaga(main)
+        .dispatch({ type: GET_JOBS })
         .provide([
             [call(fetchJobs), payload]
         ])
