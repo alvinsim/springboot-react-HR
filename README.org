@@ -4,8 +4,11 @@
 
 * Tasks [0%]
 
-** TODO Setup TypeScript -- [[https://parceljs.org/typeScript.html]]
-** TODO Setup tslint.json
+** TODO Employee listing page
+** TODO View and update job details
+** TODO Delete job
+** TODO View and update employee details
+** TODO Delete employee
 
 * Introduction
 
@@ -15,11 +18,11 @@ This project is a HR (/Java RESTful Web Service/) application written using [[ht
 
 ** Pre-requisite
 
- To run this application, the below requirements need to be installed.
+To run this application, the below requirements need to be installed.
  - Java JDK (/version 11/)
  - Maven (/version 3.6.3/)
 
- As this project uses [[https://projectlombok.org/][Lombok]] in the entity models, it may be useful to install its IDE or text editor plugin/extension. You can refer to the Lombok website for details on how to do so.
+As this project uses [[https://projectlombok.org/][Lombok]] in the entity models, it may be useful to install its IDE or text editor plugin/extension. You can refer to the Lombok website for details on how to do so.
 
 ** Starting it up
 
@@ -54,9 +57,19 @@ These APIs return a JSON response in the [[https://github.com/omniti-labs/jsend]
 
 - message :: Error message when processing the request or the request has invalid data.
 
-* React Front-end client
+* Front-end client -- React
 
-- [[http://localhost:1234]]
+** Pre-requisite
+
+To run this front-end client, the below requirements need to be installed.
+ - Node (/version 14.9.0/)
+ - Yarn (/version 1.22.4/)
+
+Once the above are installed, run the ~yarn~ command to start installation of the needed libraries.
+
+** Starting up the client
+
+Run ~yarn start~ to startup the client and lastly, open a web browser and use the address [[http://localhost:1234]].
 
 * References
 
