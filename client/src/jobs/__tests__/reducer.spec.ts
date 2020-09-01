@@ -49,7 +49,7 @@ describe('Job Reducer test', () => {
     it('should handle FETCHED_JOBS action when state is in an initial state', () => {
         expect(
             reducer(initialState, {
-                data: {},
+                data: [],
                 message: 'Some error',
                 status: 'error',
                 type: FETCHED_JOBS
@@ -78,22 +78,20 @@ describe('Job Reducer test', () => {
                     message: '',
                     status: 'success'
                 }, {
-                data: {
-                    jobs: [
-                        {
-                            id: 10,
-                            job_title: "DBA",
-                            min_salary: 5000.00,
-                            max_salary: 5500.00
-                        },
-                        {
-                            id: 11,
-                            job_title: "Accountant",
-                            min_salary: 4000.00,
-                            max_salary: 6000.00
-                        }
-                    ]
-                },
+                data: [
+                    {
+                        id: 10,
+                        job_title: "DBA",
+                        min_salary: 5000.00,
+                        max_salary: 5500.00
+                    },
+                    {
+                        id: 11,
+                        job_title: "Accountant",
+                        min_salary: 4000.00,
+                        max_salary: 6000.00
+                    }
+                ],
                 message: '',
                 status: 'success',
                 type: FETCHED_JOBS

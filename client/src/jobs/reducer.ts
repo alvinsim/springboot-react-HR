@@ -1,35 +1,34 @@
 import { Reducer } from 'redux';
 import { GET_JOBS, FETCHED_JOBS } from './actions';
-import { State, JobsActionTypes } from './types';
+import { State, JobsAction } from './types';
 
 const initialState: State = {
-  jobs: [],
-  loading: false,
-  message: "",
-  status: ""
+    jobs: [],
+    loading: false,
+    message: "",
+    status: ""
 };
 
-const reducer: Reducer<State> = (state = initialState, action: JobsActionTypes) => {
-  switch (action.type) {
-    case GET_JOBS:
-      return {
-        ...state,
-        loading: true
-      }
-    case FETCHED_JOBS: {
-      const { data, status, message } = action;
-      const jobs = (undefined !== data && undefined !== data.jobs) ? data.jobs : [];
+const reducer: Reducer<State> = (state = initialState, action: JobsAction) => {
+    switch (action.type) {
+        case GET_JOBS:
+            return {
+                ...state,
+                loading: true
+            }
+        case FETCHED_JOBS: {
+            const { data, status, message } = action;
 
-      return {
-        jobs: [...jobs],
-        loading: false,
-        message,
-        status
-      };
+            return {
+                jobs: data,
+                loading: false,
+                message,
+                status
+            };
+        }
+        default:
+            return state;
     }
-    default:
-      return state;
-  }
 };
 
 export default reducer;

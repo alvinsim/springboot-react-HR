@@ -1,7 +1,6 @@
 import { SolutionOutlined, TeamOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import * as React from 'react';
-import { Provider } from 'react-redux';
 import Employees from '~/employees';
 import Jobs from '~/jobs';
 import '~/common/App.less';

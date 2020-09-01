@@ -9,6 +9,7 @@ import reducer from '~/jobs/reducer';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// TODO use combineReducer when implementing employee or other functionality
 const store = createStore(reducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
 sagaMiddleware.run(AppSaga);
 
