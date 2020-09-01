@@ -2,6 +2,14 @@
 #+STARTUP: showall
 #+OPTIONS: toc:nil
 
+* Tasks [0%]
+
+** TODO Employee listing page
+** TODO View and update job details
+** TODO Delete job
+** TODO View and update employee details
+** TODO Delete employee
+
 * Introduction
 
 This project is a HR (/Java RESTful Web Service/) application written using [[https://spring.io/projects/spring-boot][Spring Boot]] (/version 2.3.0.RELEASE/).
@@ -10,11 +18,11 @@ This project is a HR (/Java RESTful Web Service/) application written using [[ht
 
 ** Pre-requisite
 
- To run this application, the below requirements need to be installed.
+To run this application, the below requirements need to be installed.
  - Java JDK (/version 11/)
  - Maven (/version 3.6.3/)
 
- As this project uses [[https://projectlombok.org/][Lombok]] in the entity models, it may be useful to install its IDE or text editor plugin/extension. You can refer to the Lombok website for details on how to do so.
+As this project uses [[https://projectlombok.org/][Lombok]] in the entity models, it may be useful to install its IDE or text editor plugin/extension. You can refer to the Lombok website for details on how to do so.
 
 ** Starting it up
 
@@ -49,6 +57,19 @@ These APIs return a JSON response in the [[https://github.com/omniti-labs/jsend]
 
 - message :: Error message when processing the request or the request has invalid data.
 
+* Front-end client -- React
+
+** Pre-requisite
+
+To run this front-end client, the below requirements need to be installed.
+ - Node (/version 14.9.0/)
+ - Yarn (/version 1.22.4/)
+
+Once the above are installed, run the ~yarn~ command to start installation of the needed libraries.
+
+** Starting up the client
+
+Run ~yarn start~ to startup the client and lastly, open a web browser and use the address [[http://localhost:1234]].
 
 * References
 
@@ -64,3 +85,4 @@ Below are the articles that I referred to when building this application from sc
 - [[https://www.toptal.com/java/spring-boot-rest-api-error-handling]]
 - [[https://www.baeldung.com/jackson-serialize-dates]]
 - [[https://www.dariawan.com/tutorials/spring/documenting-spring-boot-rest-api-springdoc-openapi-3/]]
+- [[https://parceljs.org/]]

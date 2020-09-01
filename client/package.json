@@ -1,0 +1,83 @@
+{
+		"name": "client",
+		"version": "0.2.0",
+		"main": "index.js",
+		"license": "UNLICENSED",
+		"type": "module",
+		"scripts": {
+				"build": "$(npm bin)/parcel build ./src/index.html",
+				"clean": "rm -rf dist/",
+				"lint": "$(npm bin)/eslint ./src",
+				"start": "parcel ./src/index.html",
+				"test": "$(npm bin)/jest ./src"
+		},
+		"pre-commit": [
+				"lint",
+				"test"
+		],
+		"dependencies": {
+				"antd": "^4.4.2",
+				"listing": "^0.0.1",
+				"react": "^16.13.1",
+				"react-dom": "^16.13.1",
+				"react-redux": "^7.2.1",
+				"react-router-dom": "^5.2.0",
+				"redux": "^4.0.5",
+				"redux-saga": "^1.1.3"
+		},
+		"devDependencies": {
+				"@babel/core": "^7.11.1",
+				"@babel/preset-env": "^7.11.0",
+				"@babel/preset-typescript": "^7.10.4",
+				"@types/jest": "^26.0.10",
+				"@types/parcel-env": "^0.0.0",
+				"@types/react": "^16.9.43",
+				"@types/react-dom": "^16.9.8",
+				"@typescript-eslint/eslint-plugin": "^3.6.1",
+				"@typescript-eslint/parser": "^3.6.1",
+				"babel-jest": "^26.1.0",
+				"babel-preset-react": "^6.24.1",
+				"eslint": "^7.4.0",
+				"eslint-plugin-react": "^7.20.5",
+				"jest": "^26.4.2",
+				"jest-environment-jsdom": "^26.3.0",
+				"jest-fetch-mock": "^3.0.3",
+				"less": "^3.12.2",
+				"less-loader": "^6.2.0",
+				"parcel-bundler": "^1.12.4",
+				"react-test-renderer": "^16.13.1",
+				"redux-devtools": "^3.5.0",
+				"redux-saga-test-plan": "^4.0.0-rc.3",
+				"ts-jest": "^26.1.4",
+				"tsc": "^1.20150623.0",
+				"typescript": "^3.9.6"
+		},
+		"jest": {
+				"automock": false,
+				"globals": {
+						"ts-jest": {
+								"tsConfig": "tsconfig.json",
+								"diagnostics": true
+						}
+				},
+				"moduleDirectories": [
+						"node_modules",
+						"src"
+				],
+				"moduleFileExtensions": [
+						"ts",
+						"tsx",
+						"js"
+				],
+				"moduleNameMapper": {
+						"~/(.*)": "<rootDir>/src/$1"
+				},
+				"preset": "ts-jest",
+				"setupFiles": [
+						"./setupJest.js"
+				],
+				"transform": {
+						"^.+\\.(ts|tsx)$": "ts-jest"
+				}
+		}
+}
