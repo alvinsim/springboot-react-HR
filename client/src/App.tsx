@@ -1,20 +1,20 @@
 import { SolutionOutlined, TeamOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
+import * as React from 'react';
 import Employees from '~/employees';
 import Jobs from '~/jobs';
-import * as React from 'react';
 import '~/common/App.less';
 
-interface IProps {
+interface Props {
   selectedMenuItem: string
 }
 
-interface IState {
+interface State {
   current: string
 }
 
-export class App extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+export class App extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
 
     const { selectedMenuItem } = props;
@@ -26,11 +26,11 @@ export class App extends React.Component<IProps, IState> {
     this.onClickMenu = this.onClickMenu.bind(this);
   }
 
-  public static defaultProps: Partial<IProps> = {
+  public static defaultProps: Partial<Props> = {
     selectedMenuItem: 'jobs'
   };
 
-  public render() {
+  public render(): JSX.Element {
     const { Header, Content, Footer } = Layout;
     const { current } = this.state;
 
