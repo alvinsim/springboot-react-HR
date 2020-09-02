@@ -2,14 +2,6 @@
 #+STARTUP: showall
 #+OPTIONS: toc:nil
 
-* Tasks [0%]
-
-** TODO Employee listing page
-** TODO View and update job details
-** TODO Delete job
-** TODO View and update employee details
-** TODO Delete employee
-
 * Introduction
 
 This project is a HR (/Java RESTful Web Service/) application written using [[https://spring.io/projects/spring-boot][Spring Boot]] (/version 2.3.0.RELEASE/).
@@ -86,3 +78,11 @@ Below are the articles that I referred to when building this application from sc
 - [[https://www.baeldung.com/jackson-serialize-dates]]
 - [[https://www.dariawan.com/tutorials/spring/documenting-spring-boot-rest-api-springdoc-openapi-3/]]
 - [[https://parceljs.org/]]
+
+* Tasks [0%]
+
+- [ ] Employee listing page
+- [ ] View and update job details
+- [ ] Delete job
+- [ ] View and update employee details
+- [ ] Delete employee
