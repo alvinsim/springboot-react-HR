@@ -19,7 +19,7 @@
 		<h2.version>1.4.200</h2.version>
 		<java.version>11</java.version>
 		<java-ee.api.version>8.0.1</java-ee.api.version>
-		<junit.version>4.13</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<lombok.version>1.18.12</lombok.version>
 		<slf4j.version>1.7.28</slf4j.version>
 		<spring-boot.version>2.3.0.RELEASE</spring-boot.version>
