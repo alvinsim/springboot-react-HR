@@ -16,7 +16,7 @@
 
 	<properties>
 		<guava.version>30.1.1-jre</guava.version>
-		<h2.version>1.4.200</h2.version>
+		<h2.version>2.0.206</h2.version>
 		<java.version>11</java.version>
 		<java-ee.api.version>8.0.1</java-ee.api.version>
 		<junit.version>4.13.1</junit.version>
